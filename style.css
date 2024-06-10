@@ -1,5 +1,5 @@
 body {
-    background-color: rgb(25, 1, 1);
+    background-color: rgb(15, 1, 1);
     margin: 0;
     padding: 0;
 }
@@ -7,16 +7,17 @@ body {
 #logotipo {
     width: 100px;
 }
-
+/*Header */
 header {
     display: flex;
     background-color: rgba(0, 0, 0);
     align-items: center;
     justify-content: space-between;
+    border-bottom: 2px solid antiquewhite;
 }
 
 .navbar {
-    padding-inline: 120px;
+    margin: auto; 
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
@@ -25,22 +26,24 @@ header {
 .navbar a {
     margin: 10px;
     padding: 20px 120px;
-    font-size: 25px;
+    font-size: 30px;
     color: antiquewhite;
     text-decoration: none;
     text-align: center;
     border: 2px solid antiquewhite;
-    border-radius: 10px;
+    border-radius: 5px;
     flex: 1;
 }
 
 .navbar a:hover {
-    color: brown;
-    background-color: rgba(22, 22, 22, 0.8);
+    color: rgb(120, 29, 29);
+    background-color: rgba(20, 20, 20, 0.8);
 }
 
+
+
+/*Conteudo principal do site*/
 .conteudo {
-    background-color: rgb(61, 61, 61, 0.8);
     text-align: center;
     border-radius: 10px;
     margin-top: 20px;
@@ -49,14 +52,54 @@ header {
     max-width: 70%; 
 }
 
+
+/*footer*/
+footer {
+    background-color: #000000;
+    color: antiquewhite;
+    padding: 20px 0;
+    text-align: center;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer-content p {
+    margin: 5px 0;
+    color: antiquewhite;
+}
+
+.social-media a {
+    color: white;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+.social-media a:hover {
+    text-decoration: underline;
+}
+
+.contact-info p {
+    margin: 5px 0;
+    color: antiquewhite;
+}
+
+
+
+/*Conteudo da home page*/
 #nome {
-    font-size: 70px;
+    font-size: 100px;
     color: antiquewhite;
     margin: 0;
 }
 
 #titulo {
-    font-size: 50px;
+    font-size: 65px;
     color: antiquewhite;
     margin: -20px;
 }
@@ -72,11 +115,61 @@ header {
     font-size: 35px;
     color: antiquewhite;
 }
-
-.pagatual {
-    color: brown;
+#nome {
+    font-size: 4.5em;
+    color: antiquewhite;
+    margin-bottom: 20px;
+    text-align: center;
 }
 
+#titulo {
+    font-size: 3em;
+    color: antiquewhite;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+#sobre {
+    font-size: 3em;
+    color: antiquewhite;
+    margin-bottom: 15px; 
+    text-align: center;
+}
+
+img {
+    display: block;
+    margin: 0 auto 20px auto;
+    width: 400px; 
+    height: auto;
+}
+
+#descricao {
+    font-size: 2em;
+    line-height: 1.6; 
+    margin-bottom: 20px;
+    text-align: justify;
+    text-indent: 2em;
+}
+
+@media (max-width: 768px) {
+    #nome {
+        font-size: 2em;
+    }
+
+    #titulo {
+        font-size: 1.5em;
+    }
+
+    #sobre {
+        font-size: 1.2em;
+    }
+
+    #descricao {
+        font-size: 1em;
+    }
+}
+
+/*Conteudo do catalogo*/
 #aviso{
     font-size: 20px;
     color: antiquewhite;
@@ -84,31 +177,228 @@ header {
     padding: 10px;
     text-align: center;
     border-bottom: 1px solid antiquewhite;
-    border-top: 1px solid antiquewhite;
+}
+
+#catalogo {
+    font-size: 5vw; 
+    color: antiquewhite;
+}
+
+#logocat {
+    width: 80%;
+    max-width: 350px;
 }
 
 .produtos {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
+    flex-direction: column;
     gap: 20px;
 }
 
 .produto {
-    background-color: antiquewhite;
-    border-radius: 10px;
-    padding: 10px;
-    width: calc(33.333% - 40px);
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    font-size: 4vw;
+    color: antiquewhite;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.produto.alternar {
+    flex-direction: row-reverse;
 }
 
 .produto img {
-    max-width: 100%;
-    border-radius: 10px;
+    width: 50%;
+    max-width: 250px;
+    height: auto;
+    border-radius: 2px;
 }
 
 .produto p {
-    margin: 10px 0 0;
-    color: black;
-    font-size: 16px;
+    flex: 1;
+}
+
+.produto:hover {
+    transform: scale(1.05);
+    background-color:rgb(75, 0, 0, 0.3) ;
+}
+
+@media (max-width: 1200px) {
+    .produto {
+        font-size: 3.5vw;
+    }
+
+    .produto img {
+        width: 60%;
+    }
+}
+
+@media (max-width: 768px) {
+    .produto {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        font-size: 4.5vw;
+    }
+
+    .produto img {
+        width: 80%; 
+    }
+}
+
+@media (max-width: 480px) {
+    #catalogo {
+        font-size: 6vw;
+    }
+
+    .produto {
+        font-size: 5vw;
+    }
+
+    .produto img {
+        width: 90%;
+    }
+}
+.produto-item {
+    width: 400px;
+}
+
+.produtos a{
+    text-decoration: none;
+    background-color: rgb(0, 0, 0, 0.3);
+    padding: 20px;
+    border-radius: 5px;
+}
+
+
+/*Conteudo antologia*/
+.galeria {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.galeria-item {
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    padding-bottom: 100%;
+    border-radius: 5px;
+}
+
+.galeria-item img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/*conteudo contato*/
+.contatos {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px; 
+    width: 100%;
+}
+
+
+.contato-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(0, 0, 0, 0.3);
+    padding: 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+    width: 100%; 
+    max-width: 800px;
+    text-align: center;
+    margin: 0 10px; 
+}
+
+
+.contato-item a {
+    text-decoration: none; 
+    color: antiquewhite; 
+    display: flex;
+    align-items: center;
+    gap: 10px; 
+    width: 100%; 
+    justify-content: center;
+    font-size: 2em;
+}
+
+.contato-item i {
+    font-size: 1.5em;
+    color: white;
+}
+
+.contato-item:hover {
+    background-color: rgb(95, 0, 0, 0.3);
+}
+
+@media (max-width: 768px) {
+    .contato-item {
+        width: 100%;
+        margin: 0 5px; 
+    }
+}
+
+
+/*Conteudo janela de produtos individuais*/
+.produtofixo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.produtofixo-imagem {
+    width: 600px;
+    max-width: 50%;
+    height: auto;
+    border-radius: 5px;
+}
+
+.produtofixo-detalhes {
+    margin-top: 20px;
+    max-width: 100%;
+    text-align: center;
+    font-size: 30px;
+    color: antiquewhite;
+}
+
+.preco {
+    margin-top: 20px;
+}
+
+.preco a {
+    display: inline-block;
+    background-color: rgb(85, 0, 0);
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+
+.preco a:hover {
+    background-color: rgb(120, 0, 0);
+}
+
+@media screen and (min-width: 768px) {
+    .produtofixo {
+        flex-direction: row;
+        align-items: flex-start;
+    }
+
+    .produtofixo-detalhes {
+        margin-top: 0;
+        margin-left: 80px;
+        max-width: 600px;
+        font-size: 40px;
+    }
 }
